@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>老乡鸡门店数据报表</title>
+    <link rel="stylesheet" href="css/mui.min.css">
+    <link rel="stylesheet" href="css/icons-extra.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="./css/mobiscroll.custom-3.0.0-beta6.min.css">
+    <link rel="stylesheet" href="css/config.css">
+</head>
+<style>
+			.flex-container {
+				display: -webkit-box;
+				display: -webkit-flex;
+				display: flex;
+				-webkit-flex-flow: row wrap;
+				justify-content: space-between;
+				text-align: center;
+			}
+			
+			.mui-content-padded {
+				padding: 10px;
+			}
+			
+			.mui-content-padded a {
+				margin: 3px;
+				width: 50px;
+				height: 50px;
+				display: inline-block;
+				text-align: center;
+				background-color: #fff;
+				border: 1px solid #ddd;
+				border-radius: 25px;
+				background-clip: padding-box;
+			}
+			
+			.mui-content-padded a .mui-icon-extra {
+				margin-top: 12px;
+			}
+			
+			.mui-spinner,
+			.mui-spinner-white {
+				margin-top: 12px
+			}
+			
+			.active .mui-spinner-indicator {
+				background: #007AFF;
+			}
+			
+			.mui-content a {
+				color: #8F8F94;
+			}
+			
+			.mui-content a.active {
+				color: #007aff;
+			}
+		</style>
+        
+<body>
+    <!--头部栏-->
+    <header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left back"></a>
+            <div>
+         <span class="data"><i id="subtract" class="mui-icon mui-icon-arrowleft"></i><input type="text" id="date"  class="join-date"><i id="add" class="mui-icon mui-icon-arrowright"></i></span>
+         <span class="slt">
+                <select class="mui-btn mui-btn-block" id="option">
+					<option value="1">日</option>
+					<option value="2">周</option>
+					<option value="3">月</option>
+					<option value="4">年</option>
+				</select>
+        </span>
+
+    </div>
+	</header>
+    <!--主体部分-->
+    <div class="content">
+        <table class="table table-bordered biaoge">
+            <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>机构</th>
+                    <th>销售额</th>
+                    <th>来客数</th>
+                    <th>人均消费</th>
+                  </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
+        <div class="footerContent">
+            <p class="title">各个分店整体KPI分析图</p>
+            <p>说明:</p>
+            <p>1.环比是同昨日相比，本周是和上周相比，本月是和上月相比，本年度是和去年的相比.</p>
+            <p>2.本页显示字段有机构，销售额，销售额环比，来客数，来客数环比，人均消费，人均消费环比，本期占比<i>(本店占全部门店销售的比例)</i></p>
+         </div>
+    </div>
+    <br>
+    <br>
+    <br>
+  
+    <!--底部切换栏-->
+    <nav class="mui-bar mui-bar-tab">
+			<a class="mui-tab-item mui-active" href="config.html">
+				<span class="mui-icon mui-icon-list"></span>
+				<span class="mui-tab-label">kip分析</span>
+			</a>
+			<a class="mui-tab-item store" href="javascript:void(0)">
+				<span class="mui-icon mui-icon-home"></span>
+				<span class="mui-tab-label">门店运营</span>
+			</a>
+	</nav>
+
+</body>
+<script src="js/libs/require.js" type="text/javascript" data-main="main"></script>
+</html>
+
+
+
+
+

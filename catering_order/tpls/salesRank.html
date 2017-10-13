@@ -1,0 +1,33 @@
+<div style="margin-top:50px" class="salesRank">
+  <div>
+      <ul class="categray">
+          <li class="active type">菜品</li>
+          <li class="big">大类</li>
+          <li class="small">小类</li>
+      </ul>
+  </div>
+  <div class="rankType">
+        <div id="rankpie" style="height:400px;"></div>
+        <div class="rankingList">
+            <span>销量排序</span>
+            <span>销量额排序</span>
+        </div> 
+
+        <div class="mui-content">
+                    <div class="mui-card">
+                        <ul class="mui-table-view">
+                            {{each}}
+                            <li class="mui-table-view-cell">
+                                <span class="mui-badge mui-badge-danger number">1</span>
+                                <span>{{$value.SaleName}}</span>
+                                <span>{{$value.SaleNumber}}份</span>
+                                <span>￥{{$value.SaleAmt}}</span>
+                            </li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
+    </div>
+  
+</div>
+

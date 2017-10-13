@@ -1,0 +1,29 @@
+{{each}}
+    <tr>
+      <th> {{$value.FlowId}} </th>
+      <th>{{$value.BranchName}}</th>
+      <th class="ttt" data-tt="{{$value.BranchNo}}">
+        <!--<input type="hidden" name="" value="{{$value.BranchNo}}">-->
+        <a href="javascript:void(0)" class="chartData" >
+          <p>{{$value.SaleAmt}}</p>
+          <span>{{$value.SaleMomRatio}}%</span>
+          <span></span>
+        </a>  
+      </th>
+      <th class="ttt" data-tt="{{$value.BranchNo}}">
+          <a href="javascript:void(0)" class="chartData">
+            <p>{{$value.GustNumber}}</p>
+            <span>{{$value.GustMomRatio}}%</span>
+            <span class="upDown"></span>
+          </a>
+      </th>
+      <th class="ttt" data-tt="{{$value.BranchNo}}">
+        <a href="javascript:void(0)" class="chartData">
+            <p>{{$value.AveragePayAmt}}</p>
+            <span>{{$value.AveragePayAmtMomRatio}}%</span>
+            <span></span> 
+         </a>   
+        </th>
+     </tr>
+{{/each}}
+

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+
+<div class="login-container">
+    <h3 class="text-center">博学谷管理系统</h3>
+    <form class="form-horizontal">
+        <div class="form-group">
+            <label class="col-sm-2 control-label">用户名</label>
+            <div class="col-sm-10">
+                <input type="text" name="tc_name" class="form-control" value="前端学院">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">密码</label>
+            <div class="col-sm-10">
+                <input type="password" name="tc_pass" class="form-control" value="123456">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-success btn-block">登录</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+</body>
+<script src="js/lib/jquery-2.1.4.js"></script>
+<script>
+    //验证：前端验证-->当用户提交表单的时候，获取表单信息，将表单信息通过ajax请求验证是否正确
+
+    $("form").on("submit",function(){
+        //alert("提交表单");
+
+
+        //获取表单信息：
+        var formData=$(this).serialize();
+        console.log(formData);
+
+        //ajax请求登录的接口
+        $.ajax({
+            url:"/api/login",        //-->反向代理访问：http://api.butue.com/login
+            type:"post",
+            data:formData,
+            success:function(res){          //request：请求  res-->response：响应
+                //console.log(res);
+
+                if(res.code==200){
+
+
+                    var userInfo=res.result;
+                    var userInfoStr=JSON.stringify(userInfo);
+                    //console.log(userInfoStr);
+
+                    //保存用户信息
+                    sessionStorage.setItem("userInfo",userInfoStr);
+
+                    //console.log(sessionStorage.getItem("userInfo"));
+
+                    //登录成功？
+                    location.href="index.html";
+
+                }
+            }
+        })
+
+
+        //阻止页面的刷新？
+        return false;           //e.preventDefault();-->阻止事件默认行为
+
+    })
+</script>
+</html>

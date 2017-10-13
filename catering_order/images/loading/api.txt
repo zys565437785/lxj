@@ -1,0 +1,4 @@
+//$.fn.loading.loadfail(callback,title)   «Î«Û ß∞‹“≥√Ê
+//$.fn.loading.load(title)
+//$.fn.loading.get(url,datas,title).done(callback).fial(callback)
+//$.fn.loading.post(url,datas,title).done(callback).fial(callback)
